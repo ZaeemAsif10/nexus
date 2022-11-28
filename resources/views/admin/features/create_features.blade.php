@@ -30,6 +30,19 @@
 
                                     <table class="table" id="new_row">
                                         <tr>
+                                            {{-- <td class="border-0">
+                                                <div class="form-group">
+                                                    <label>Project</label>
+                                                   <select name="project_id" class="form-control">
+                                                    <option value="" selected disabled>Choose</option>
+                                                    @isset($data)
+                                                        @foreach ($data['projects'] as $project)
+                                                            <option value="{{ $project->id }}">{{ $project->name }}</option>
+                                                        @endforeach
+                                                    @endisset
+                                                   </select>
+                                                </div>
+                                            </td> --}}
                                             <td class="border-0">
                                                 <div class="form-group">
                                                     <label>Feature</label>

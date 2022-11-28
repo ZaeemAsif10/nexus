@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\HomeSlider;
+use App\Models\Project;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Validator;
@@ -98,5 +99,49 @@ class ProjectController extends Controller
         return response()->json([
             'success' => 'Slider Deleted Successfully',
         ]);
+    }
+
+    public function createProjects()
+    {
+        return view('admin.projects.create_projects');
+    }
+
+    public function storeProjects(Request $request)
+    {
+        $data = $request->all();
+
+        $rules = array(
+            'name' => 'required',
+            'p_image' => 'required',
+        );
+
+        $validator = Validator::make($data, $rules);
+        if ($validator->fails()) {
+
+            return response()->json(['errors' => $validator->errors()->all()]);
+        }
+
+        if (!Project::where('name', $request->name)->first()) {
+            $projects = new Project();
+            $projects->name = $request->name;
+            $projects->description = $request->description;
+            if ($request->hasFile('p_image')) {
+                $file = $request->file('p_image');
+                $extension = $file->getClientOriginalExtension();
+                $filename = time() . '.' . $extension;
+                $file->move('storage/app/public/uploads/projects/', $filename);
+                $projects->p_image = $filename;
+            }
+
+            $projects->save();
+            return response()->json([
+                'status' => 200,
+                'success' => 'Project Added Sucessfully',
+            ]);
+        } else {
+            return response()->json([
+                'errors' => 'Project Name Already Exists',
+            ]);
+        }
     }
 }

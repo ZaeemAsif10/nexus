@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Feature;
+use App\Models\Project;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 
@@ -21,6 +22,7 @@ class FeatureController extends Controller
 
     public function createFeature()
     {
+        // $data['projects'] = Project::all();
         return view('admin.features.create_features');
     }
 
