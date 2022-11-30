@@ -4,7 +4,7 @@
     <div class="header-left">
         <a href="{{ url('admin') }}" class="logo">
             <div class="page-title-box">
-                <h3>POSHCITY</h3>
+                <h3>NEXUS</h3>
 
             </div>
 

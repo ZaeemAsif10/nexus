@@ -1,7 +1,7 @@
 <header>
     <nav class="navbar navbar-expand-lg bg-white">
         <div class="container">
-            <a class="navbar-brand" href="{{ url('/') }}"><img src="{{ asset('public/web-assets/img/logo/Nexus logo .png') }}" class="img-fluid logo"
+            <a class="navbar-brand" href="{{ url('/') }}"><img src="{{ asset('public/web-assets/img/logo/Nexus logo1 .png') }}" class="img-fluid logo"
                     alt="logo" srcset=""></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
