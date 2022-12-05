@@ -11,7 +11,7 @@ body {
 }
 
 h1,
-h5 {
+h5,h6 {
     font-family: 'Raleway', sans-serif !important;
 }
 
@@ -40,7 +40,7 @@ h5 {
 
 .bg-c {
     background-color: #092C3F;
-    padding: 12rem 0px 10px 0px;
+    padding: 7rem 0px 7rem 0px;
 }
 
 .bg-foot {
@@ -237,7 +237,7 @@ a:hover {
 }
 
 .investing {
-    font-size: 30px !important;
+    font-size: 50px !important;
     font-weight: 100px !important;
     font-family: Montserrat !important;
 
@@ -245,8 +245,8 @@ a:hover {
 }
 
 .property-img {
-    width: 80% !important;
-    height: 70% !important;
+    width: 100% !important;
+    /* height: 70% !important; */
 }
 
 .our-services {
@@ -337,13 +337,18 @@ a:hover {
     font-family: 'LEMON MILK', sans-serif;
 }
 
-.image img {
-    height: 48vh;
+.image .project_img {
+    height: 34vh;
+    border-radius: 5px;
     width: 100% !important;
 }
 
 .image {
     position: relative;
+}
+
+.testimonial_img{
+    
 }
 
 .overlay {
@@ -395,7 +400,7 @@ a:hover {
 }
 
 .know-section p {
-    font-size: 1rem !important;
+    font-size: 1.7rem !important;
     font-family: 'Raleway', sans-serif !important;
 }
 
@@ -697,8 +702,8 @@ a:hover {
 }
 
 @media screen and (max-width:768px) {
-    .image img {
-        height: 52vh !important;
+    .image .project_img {
+        height: 50% !important;
     }
 
     .charman-section .ch-img {
@@ -710,7 +715,7 @@ a:hover {
     }
 
     .bg-c {
-        padding: 7rem 10px 10px 10px;
+        padding: 7rem 10px 7rem 10px;
     }
 
     #cosultant1 {
@@ -1162,4 +1167,20 @@ footer .widget-about .contact-details li a {
 
 .uniq_img {
     width: 60%;
+}
+
+.home-img{
+    width: 100%;
+    height: 95%;
+}
+
+.con{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.p-menue li{
+    padding: 5px 0px;
 }

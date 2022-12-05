@@ -101,6 +101,15 @@ class ProjectController extends Controller
         ]);
     }
 
+    // Projects Functions
+    public function index(Request $request)
+    {
+        if ($request->ajax()) {
+            return Project::where('status', '!=', 1)->get();
+        }
+        return view('admin.projects.projects');
+    }
+
     public function createProjects()
     {
         return view('admin.projects.create_projects');
@@ -143,5 +152,34 @@ class ProjectController extends Controller
                 'errors' => 'Project Name Already Exists',
             ]);
         }
+    }
+
+    public function editProjects(Request $request)
+    {
+        $data['projects'] = Project::find($request->id);
+        return view('admin.projects.edit_projects', compact('data'));
+    }
+
+    public function updateProjects(Request $request)
+    {
+        $projects = Project::find($request->project_edit_id);
+        $projects->name = $request->name;
+        $projects->description = $request->description;
+        if ($request->hasFile('p_image')) {
+
+            $path = "storage/app/public/uploads/projects/" . $projects->p_image;
+            if (File::exists($path)) {
+                File::delete($path);
+            }
+
+            $file = $request->file('p_image');
+            $extension = $file->getClientOriginalExtension();
+            $filename = time() . '.' . $extension;
+            $file->move('storage/app/public/uploads/projects/', $filename);
+            $projects->p_image = $filename;
+        }
+
+        $projects->update();
+        return redirect('projects')->with('success', 'Project Update Sucessfully');
     }
 }

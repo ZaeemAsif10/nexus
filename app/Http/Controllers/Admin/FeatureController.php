@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Feature;
 use App\Models\Project;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
+use App\Models\Feature;
 
 class FeatureController extends Controller
 {
@@ -17,13 +17,13 @@ class FeatureController extends Controller
 
     public function getFeature()
     {
-        return Feature::where('status', '!=', 1)->get();
+        return Feature::with(['project'])->where('status', '!=', 1)->get();
     }
 
     public function createFeature()
     {
-        // $data['projects'] = Project::all();
-        return view('admin.features.create_features');
+        $data['projects'] = Project::select(['id','name'])->get();
+        return view('admin.features.create_features', compact('data'));
     }
 
     public function storeFeature(Request $request)
@@ -41,6 +41,7 @@ class FeatureController extends Controller
                 $image = new Feature();
                 $image->icon = $name;
                 $image->feature = $request->feature[$index];
+                $image->project_id = $request->project_id[$index];
                 $image->save();
             }
         }
@@ -54,12 +55,14 @@ class FeatureController extends Controller
     public function editFeature(Request $request)
     {
         $data['feature'] = Feature::where('id', $request->id)->first();
+        $data['projects'] = Project::select(['id','name'])->get();
         return view('admin.features.edit_features', compact('data'));
     }
 
     public function updateFeature(Request $request)
     {
         $feature = Feature::where('id', $request->edit_f_id)->first();
+        $feature->project_id = $request->project_id;
         $feature->feature = $request->feature;
         if ($request->hasFile('icon')) {
             $file = $request->file('icon');
@@ -70,6 +73,6 @@ class FeatureController extends Controller
         }
 
         $feature->update();
-        return back()->with('success', "Feature Update Successfully");
+        return redirect('features')->with('success', "Feature Update Successfully");
     }
 }

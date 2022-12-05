@@ -25,11 +25,14 @@
                             @else
                             style="display: none;" @endif>
 
-                            <li><a href="{{ route('features') }}"> <span>Features & Amenities</span></a> </li>
+                            <li>
+                                <a class="{{ Route::is('features') ? 'menuss-active' : '' }}"
+                                    href="{{ route('features') }}"> <span>Features & Amenities</span></a>
+                            </li>
 
                             <li>
-                                <a class="{{ Route::is('create.projects') ? 'menuss-active' : '' }}"
-                                    href="{{ route('create.projects') }}"> <span>create-projects</span></a>
+                                <a class="{{ Route::is('projects') ? 'menuss-active' : '' }}"
+                                    href="{{ route('projects') }}"> <span>Projects</span></a>
                             </li>
                         </ul>
                     </li>

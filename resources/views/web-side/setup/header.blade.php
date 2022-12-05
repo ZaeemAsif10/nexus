@@ -1,11 +1,12 @@
 <header>
     <nav class="navbar navbar-expand-lg bg-white">
         <div class="container">
-            <a class="navbar-brand" href="{{ url('/') }}"><img src="{{ asset('public/web-assets/img/logo/Nexus logo1 .png') }}" class="img-fluid logo"
-                    alt="logo" srcset=""></a>
+            <a class="navbar-brand" href="{{ url('/') }}"><img
+                    src="{{ asset('public/web-assets/img/logo/Nexus logo1 .png') }}" class="img-fluid logo" alt="logo"
+                    srcset=""></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                aria-expanded="false" aria-label="Toggle navigation">
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -17,13 +18,19 @@
                         <a class="nav-link" href="{{ url('about') }}">About</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink"
+                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Projects
                         </a>
-                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-                          <li><a class="dropdown-item" href="#">Action</a></li>
+                        <ul class="dropdown-menu dropdown-menu-white p-menue" aria-labelledby="navbarDarkDropdownMenuLink">
+                            @php
+                                $navbars = App\Models\Project::all();
+                            @endphp
+                            @foreach ($navbars as $navbarItem)
+                                <li><a class="dropdown-item" href="{{ url('projects/'.$navbarItem->id) }}">{{ $navbarItem->name }}</a></li>
+                            @endforeach
                         </ul>
-                      </li>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url('blogs') }}">Blog</a>
                     </li>

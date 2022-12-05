@@ -30,10 +30,10 @@
 
                                     <table class="table" id="new_row">
                                         <tr>
-                                            {{-- <td class="border-0">
+                                            <td class="border-0">
                                                 <div class="form-group">
                                                     <label>Project</label>
-                                                   <select name="project_id" class="form-control">
+                                                   <select name="project_id[]" class="form-control" required>
                                                     <option value="" selected disabled>Choose</option>
                                                     @isset($data)
                                                         @foreach ($data['projects'] as $project)
@@ -42,7 +42,7 @@
                                                     @endisset
                                                    </select>
                                                 </div>
-                                            </td> --}}
+                                            </td>
                                             <td class="border-0">
                                                 <div class="form-group">
                                                     <label>Feature</label>
@@ -93,7 +93,20 @@
             // Add New Row
             $('#projectForm').on('click', '.add_more', function() {
                 var html1 = '';
-                html1 += '<tr class="secondRow">>' +
+                html1 += '<tr class="secondRow">' +
+                    '<td class="border-0">' +
+                        '<div class="form-group">' +
+                            '<label>Project</label>' +
+                            '<select name="project_id[]" class="form-control" required>' +
+                            '<option value="" selected disabled>Choose</option>' +
+                            '@isset($data)' +
+                                '@foreach ($data["projects"] as $project)' +
+                                    '<option value="{{ $project->id }}">{{ $project->name }}</option>' +
+                                '@endforeach' +
+                            '@endisset' +
+                            '</select>' +
+                        '</div>' +
+                    '</td>' +
                     '<td class="border-0">' +
                     '<div class="form-group" id="fc">' +
                     '<label>Feature</label>' +

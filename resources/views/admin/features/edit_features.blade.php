@@ -24,20 +24,39 @@
                             <h4 class="card-title mb-0">Edit Features</h4>
                         </div>
                         <div class="card-body">
-                            <form action="{{ url('update-feature') }}" method="POST" id="projectForm" class="validation-form"
-                                enctype="multipart/form-data">
+                            <form action="{{ url('update-feature') }}" method="POST" id="projectForm"
+                                class="validation-form" enctype="multipart/form-data">
                                 <input type="hidden" name="edit_f_id" value="{{ $data['feature']->id }}">
                                 @csrf
                                 <div class="row">
-                                    <div class="col-md-6">
+                                    <div class="col-md-4">
                                         <div class="form-group">
-                                            <input type="text" name="feature" value="{{ $data['feature']->feature }}" class="form-control" required>
+                                            <label>Project</label>
+                                            <select name="project_id" class="form-control" required>
+                                                <option value="" selected disabled>Choose</option>
+                                                @isset($data)
+                                                    @foreach ($data['projects'] as $project)
+                                                        <option value="{{ $project->id }}"
+                                                        {{ $data['feature']->project_id == $project->id ? 'selected' : '' }}
+                                                        >{{ $project->name }}</option>
+                                                    @endforeach
+                                                @endisset
+                                            </select>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-md-4">
                                         <div class="form-group">
+                                            <label>Title</label>
+                                            <input type="text" name="feature" value="{{ $data['feature']->feature }}"
+                                                class="form-control" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Image</label>
                                             <input type="file" name="icon" class="form-control">
-                                            <img src="{{ asset('storage/app/public/uploads/features/'.$data['feature']->icon) }}" width="50px" class="mt-3" alt="">
+                                            <img src="{{ asset('storage/app/public/uploads/features/' . $data['feature']->icon) }}"
+                                                width="50px" class="mt-3" alt="">
                                         </div>
                                     </div>
                                 </div>

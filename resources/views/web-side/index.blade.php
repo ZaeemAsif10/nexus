@@ -9,8 +9,8 @@
 
                         @foreach ($data['sliders'] as $key => $slider)
                             <div class="carousel-item {{ $key == 0 ? ' active' : '' }}">
-                                <img src="{{ asset('storage/app/public/uploads/home/slider/' . $slider->image) }}" class="d-block w-100"
-                                    alt="...">
+                                <img src="{{ asset('storage/app/public/uploads/home/slider/' . $slider->image) }}"
+                                    class="d-block w-100" alt="...">
                             </div>
                         @endforeach
 
@@ -39,37 +39,10 @@
         <div class="container mt-5 mb-5">
 
             <div class="row">
-                <div class="col-md-5">
-                    <div class="row">
-                        <div class="text-center col-md-6">
-                            <div class="card-1 company">
-                                <h5>Company <br> Tagline</h5>
-                            </div>
-                            <div class="card-2 mt-3 mission">
-                                <h5>Our Goals</h5>
-                                <p>Our mission is to be
-                                    serve the community through the best
-                                    real estate service</p>
-                            </div>
-                        </div>
-                        <div class="text-center col-md-6">
-                            <div class="card-2 mt-3 mt-lg-5 our-mission">
-                                <h5>Our Mission</h5>
-                                <p>Our mission is to be
-                                    serve the community through the best
-                                    real estate service</p>
-                            </div>
-                            <div class="card-3 mt-3 vision">
-                                <h5>Our Vision</h5>
-                                <p>Our mission is to be
-                                    serve the community through the best
-                                    real estate service</p>
-                            </div>
-                        </div>
-                    </div>
+                <div class="col-md-6">
+                    <img src="{{ asset('public/web-assets/img/banner/home.jpg') }}" class="home-img" alt="">
                 </div>
-                <div class="col-md-2"></div>
-                <div class="col-md-5 mt-4">
+                <div class="col-md-6 mt-4">
                     <h1 class="color-a">Nexus Properties</h1>
                     <p class="mt-lg-5">The A Team scaled to the main dealer level in just two months
                         and became the second-highest seller of Al-Noor Orchard
@@ -132,47 +105,52 @@
                 </div>
             </div>
             <div class="row mt-5">
-                <div class="col-md-6 col-lg-3 image mb-3">
+                @isset($data)
+                    @foreach ($data['projects'] as $project)
+                        <div class="col-md-6 col-lg-4 image mt-3">
+                            <div class="card border-0">
+                                <div class="card-body">
+                                    <img src="{{ asset('storage/app/public/uploads/projects/' . $project->p_image ?? '') }}"
+                                        class="img-fluid project_img" alt="">
+                                    {{-- <div class="overlay">
+                                <div class="text">
+                                    <P class="meet">Al Noor Orchard Housing Scheme</P>
+                                </div>
+                            </div> --}}
+                                    <h6 class="mt-3">{{ $project->name }}</h6>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                @endisset
+
+                {{-- <div class="col-md-6 col-lg-6 image mb-3">
+                    <img src="{{ asset('public/web-assets/img/banner/img4.jpeg ') }}" class="img-fluid" alt="">
+                    <div class="overlay">
+                        <div class="text">
+                            <P class="meet">Al Noor Orchard Housing Scheme</P>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 image mb-3">
+                    <img src="{{ asset('public/web-assets/img/banner/img4.jpeg ') }}" class="img-fluid" alt="">
+                    <div class="overlay">
+                        <div class="text">
+                            <P class="meet">Al Noor Orchard Housing Scheme</P>
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 image mb-3">
                     <img src="{{ asset('public/web-assets/img/banner/img4.jpeg ') }}" class="img-fluid" alt="">
                     <div class="overlay">
                         <div class="text">
                             <P class="meet">Al Noor Orchard Housing Scheme</P>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-6 col-lg-3 image mb-3">
-                    <img src="{{ asset('public/web-assets/img/banner/img4.jpeg ') }}" class="img-fluid" alt="">
-                    <!-- <div class="overlay d-flex">
-                                        <p>Al Noor Orchard <br> Housing Scheme</p>
-                                        <button class="btn btn-img ms-5">^</button>
-                                    </div> -->
-                    <div class="overlay">
-                        <div class="text">
-                            <P class="meet">Al Noor Orchard Housing Scheme</P>
-
-
-                        </div>
-
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3 image mb-3">
-                    <img src="{{ asset('public/web-assets/img/banner/img4.jpeg ') }}" class="img-fluid" alt="">
-                    <div class="overlay">
-                        <div class="text">
-                            <P class="meet">Al Noor Orchard Housing Scheme</P>
-
-                        </div>
-
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3 image mb-3">
-                    <img src="{{ asset('public/web-assets/img/banner/img4.jpeg ') }}" class="img-fluid" alt="">
-                    <div class="overlay">
-                        <div class="text">
-                            <P class="meet">Al Noor Orchard Housing Scheme</P>
-                        </div>
-                    </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </section>
@@ -180,16 +158,20 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <h1 class="text-white text-center">Did You Know?</h1>
-                    <h3 class="text-white text-start investing">“</h3>
-                    <p class="text-white text-center investing">90% of the millionaires become so by investing in Real
-                        Estate
-                    </p>
-                    <h3 class="text-white text-end investing">“</h3>
+                    <div class="con">
+                        <div>
+                            <h1 class="text-white text-center">Did You Know?</h1>
+                        <h3 class="text-white text-start investing">“</h3>
+                        <p class="text-white text-center investing">90% of the millionaires become so by investing in Real
+                            Estate
+                        </p>
+                        <h3 class="text-white text-end investing">“</h3>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-6 image">
-                    <img src="{{ asset('public/web-assets/img/banner/propert.jpeg ') }}" class="property-img"
-                        alt="" srcset="">
+                <div class="col-md-6 testimonial_img">
+                    <img src="{{ asset('public/web-assets/img/banner/propert.jpeg ') }}" class="property-img" alt=""
+                        srcset="">
                 </div>
             </div>
         </div>
@@ -217,9 +199,9 @@
                 </div>
             </div>
             <!-- <h1 class="text-center mb-5">OUR SERViCES</h1>
-                            <div class="row">
+                                        <div class="row">
 
-                            </div> -->
+                                        </div> -->
         </div>
     </section>
     <section class="testimonial-section bg-c">
@@ -294,7 +276,7 @@
         <div class="container pt-5">
             <div class="row">
                 <div class="col-md-6">
-                    <h1 class="cosultant">LOOKiNG FOR AN <br> iNVESTMENT CONSULTANT?</h1>
+                    <h1 class="cosultant">LOOKiNG FOR AN <br> INVESTMENT CONSULTANT?</h1>
                 </div>
                 <div class="col-md-6 mt-4 text-center">
                     <a href="{{ url('contact') }}" class="btn btn-default btn-get px-4 py-2"><span>GET IN TOUCH</span></a

@@ -21,11 +21,12 @@ Route::controller(WebController::class)->group(function () {
     Route::get('/', 'index')->name('/');
     Route::get('/about', 'About')->name('about');
     Route::get('/blogs', 'Blogs')->name('blogs');
-    Route::get('/project', 'Project')->name('project');
 
     //Send Mail Contact
     Route::get('/contact', 'Contact')->name('contact');
     Route::post('/contact-mail', 'ContactMail');
+    
+    Route::get('/projects/{id}', 'Projects');
 });
 
 

@@ -7,14 +7,14 @@
             <div class="page-header">
                 <div class="row align-items-center">
                     <div class="col">
-                        <h3 class="page-title">Features</h3>
+                        <h3 class="page-title">Projects</h3>
                         <ul class="breadcrumb">
                             <li class="breadcrumb-item"><a href="{{ url('admin') }}">Dashboard</a></li>
-                            <li class="breadcrumb-item active">Features</li>
+                            <li class="breadcrumb-item active">Projects</li>
                         </ul>
                     </div>
                     <div class="col-auto float-right ml-auto">
-                        <a href="{{ url('create/feature') }}" class="btn add-btn" title="Add Features"><i
+                        <a href="{{ url('create-projects') }}" class="btn add-btn" title="Add Projects"><i
                                 class="fa fa-plus"></i></a>
                     </div>
                 </div>
@@ -25,7 +25,7 @@
                 <div class="col-sm-12">
                     <div class="card mb-0">
                         <div class="card-header">
-                            <h4 class="card-title mb-0">Features</h4>
+                            <h4 class="card-title mb-0">Projects</h4>
                         </div>
                         <div class="card-body">
 
@@ -34,13 +34,12 @@
                                     <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>Project</th>
                                             <th>Title</th>
                                             <th>Image</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
-                                    <tbody id="featureTable">
+                                    <tbody id="projectTable">
 
                                     </tbody>
                                 </table>
@@ -95,6 +94,7 @@
     <script>
         $(document).ready(function() {
 
+
             toastr.options.timeOut = 3000;
             @if (Session::has('error'))
                 toastr.error('{{ Session::get('error') }}');
@@ -102,13 +102,14 @@
                 toastr.success('{{ Session::get('success') }}');
             @endif
 
-            getFeature();
+
+            getProjects();
             //Get Projects
-            function getFeature() {
+            function getProjects() {
 
                 $.ajax({
 
-                    url: '{{ url('/get-feature') }}',
+                    url: '{{ url('/projects') }}',
                     type: 'get',
                     async: false,
                     dataType: 'json',
@@ -122,15 +123,14 @@
                             c++;
                             html += '<tr>' +
                                 '<td>' + c + '</td>' +
-                                '<td>' + data[i].project.name + '</td>' +
-                                '<td>' + data[i].feature + '</td>' +
-                                '<td><img src="{{ asset('storage/app/public/uploads/features/') }}/' +
-                                data[i].icon + '" width="50px" height="40px" ></td>' +
+                                '<td>' + data[i].name + '</td>' +
+                                '<td><img src="{{ asset('storage/app/public/uploads/projects') }}/' +
+                                data[i].p_image + '" width="50px" height="40px" ></td>' +
                                 '<td class="text-right">' +
                                 '<div class="dropdown dropdown-action">' +
                                 '<a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>' +
                                 '<div class="dropdown-menu dropdown-menu-right">' +
-                                '<a class="dropdown-item" href="edit-feature/' + data[i].id +
+                                '<a class="dropdown-item" href="edit-projects/' + data[i].id +
                                 '"><i class="la la-pencil" style="font-size:20px;"></i></a>' +
                                 '</div>' +
                                 '</div>' +
@@ -139,7 +139,7 @@
                         }
 
 
-                        $('#featureTable').html(html);
+                        $('#projectTable').html(html);
 
                     },
                     error: function() {
@@ -150,7 +150,7 @@
             }
 
             //Edit Projects
-            $('#featureTable').on('click', '.edit_project', function(e) {
+            $('#projectTable').on('click', '.edit_project', function(e) {
                 e.preventDefault();
 
                 var id = $(this).attr('data');
@@ -239,7 +239,7 @@
             });
 
             // Delete Projects
-            $('#featureTable').on('click', '.delete_project', function(e) {
+            $('#projectTable').on('click', '.delete_project', function(e) {
                 e.preventDefault();
 
                 var id = $(this).attr('data');

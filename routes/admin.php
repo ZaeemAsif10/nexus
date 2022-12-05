@@ -12,8 +12,11 @@ Route::group(['middleware' => ['auth', 'can:isAdmin']], function () {
     //Projects Controller Routes
     Route::controller(ProjectController::class)->group(function () {
 
-        Route::get('/create-projects', 'createProjects')->name('create.projects');
+        Route::get('/projects', 'index')->name('projects');
+        Route::get('/create-projects', 'createProjects');
         Route::post('/store-projects', 'storeProjects');
+        Route::get('/edit-projects/{id}', 'editProjects');
+        Route::post('/update-projects', 'updateProjects');
 
         Route::get('/home-slider', 'homeSlider')->name('home.slider');
         Route::get('/get-slider', 'getSlider');
