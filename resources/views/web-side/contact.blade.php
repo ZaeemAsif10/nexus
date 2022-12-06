@@ -65,8 +65,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-7">
-                    <h1 class="mt-5"> <span class="color-hire">HiRE AN iNVESTMENT</span>
-                        <p class="color-invest"> CONSULTANT Now!</p>
+                    <h1 class="mt-5"> <span class="color-hire">HIRE AN INVESTMENT</span>
+                        <p class="color-invest"> CONSULTANT NOW!</p>
                     </h1>
                     <p class="pt-0 mt-0" style="font-size:15px;">
                         Are you looking get in touch with an investment

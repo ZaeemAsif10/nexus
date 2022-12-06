@@ -21,7 +21,7 @@
                         <a href="#" class=""><i class="la la-project-diagram"></i> <span>Project
                                 Management</span> <span class="menu-arrow"></span></a>
                         <ul
-                            @if (Route::is('projects') || Route::is('project/details')) style="display: block;"
+                            @if (Route::is('projects') || Route::is('features') || Route::is('project.detail.slider')) style="display: block;"
                             @else
                             style="display: none;" @endif>
 
@@ -33,6 +33,11 @@
                             <li>
                                 <a class="{{ Route::is('projects') ? 'menuss-active' : '' }}"
                                     href="{{ route('projects') }}"> <span>Projects</span></a>
+                            </li>
+
+                            <li>
+                                <a class="{{ Route::is('project.detail.slider') ? 'menuss-active' : '' }}"
+                                    href="{{ route('project.detail.slider') }}"> <span>Project Detail Slider</span></a>
                             </li>
                         </ul>
                     </li>

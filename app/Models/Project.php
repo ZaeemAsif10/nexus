@@ -13,4 +13,9 @@ class Project extends Model
     {
         return $this->hasMany(Feature::class);
     }
+
+    public function detailsliders()
+    {
+        return $this->hasMany(Project_detail_slider::class);
+    }
 }

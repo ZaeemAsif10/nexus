@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Mail\ContactMail;
 use App\Models\HomeSlider;
 use App\Models\Project;
+use App\Models\Feature;
+use App\Models\Project_detail_slider;
 use Google\Service\Docs\Request;
 use Illuminate\Support\Facades\Mail;
 
@@ -44,6 +46,8 @@ class WebController extends Controller
     public function Projects($id)
     {
         $data['projects'] = Project::where('status','!=',1)->where('id',$id)->first();
+        $data['project_slider'] = Project_detail_slider::where('project_id',$data['projects']->id)->where('status','!=',1)->get();
+        $data['amenities'] = Feature::where('project_id',$data['projects']->id)->where('status','!=',1)->get();
         return view('web-side.projects', compact('data'));
     }
 

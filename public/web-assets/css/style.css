@@ -2,6 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@200&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Rubik:300,400,500,700');
 
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@800&display=swap');
+
 html {
     overflow-x: hidden;
 }
@@ -11,8 +13,13 @@ body {
 }
 
 h1,
-h5,h6 {
+h5,
+h6 {
     font-family: 'Raleway', sans-serif !important;
+}
+
+h4{
+    font-family: 'Rubik', sans-serif;
 }
 
 
@@ -82,6 +89,8 @@ a:hover {
     color: black;
     /* font-weight: 500 !important; */
     margin-right: 2rem;
+    font-weight: bold;
+    font-family: 'Rubik', sans-serif;
 }
 
 .carousel-caption {
@@ -91,6 +100,7 @@ a:hover {
 }
 
 .btn-gold {
+    font-family: 'Rubik', sans-serif;
     background-color: #CAB65D !important;
     padding-left: 20px !important;
     padding-right: 20px !important;
@@ -99,6 +109,7 @@ a:hover {
     font-size: .8rem !important;
     /* font-weight: 500 !important; */
     transition: .6s !important;
+    
 }
 
 .btn-gold:hover {
@@ -347,9 +358,7 @@ a:hover {
     position: relative;
 }
 
-.testimonial_img{
-    
-}
+.testimonial_img {}
 
 .overlay {
     position: absolute;
@@ -509,7 +518,8 @@ a:hover {
     height: 100%;
     overflow: hidden;
 }
-.image img{
+
+.image img {
     transition: transform .9s ease;
 }
 
@@ -636,7 +646,8 @@ a:hover {
 
 .charman-section .msg-form {
     font-family: 'LEMON MILK', sans-serif;
-    font-size: 1.3rem !important;
+    font-size: 26px !important;
+    font-weight: bold;
 }
 
 .color-blue {
@@ -799,6 +810,11 @@ a:hover {
         padding-top: 35px;
         margin: 10px 58px;
         border-radius: 15px;
+    }
+
+    .nexus {
+        margin-left: 0px !important;
+        height: 100% !important;; 
     }
 }
 
@@ -1169,18 +1185,47 @@ footer .widget-about .contact-details li a {
     width: 60%;
 }
 
-.home-img{
+.home-img {
     width: 100%;
     height: 95%;
 }
 
-.con{
+.con {
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.p-menue li{
+.p-menue li {
     padding: 5px 0px;
+}
+
+.deal_img {
+    border-radius: 5px !important;
+    width: 100%;
+    overflow: hidden;
+}
+
+.deal_img .project_img {
+    transition: 0.3s;
+}
+
+.deal_img .project_img:hover {
+    transform: scale(1.1);
+    filter: brightness(0.6);
+}
+
+.pp_img {
+    width: 100%;
+    overflow: hidden;
+}
+
+.pp_img .property-img {
+    transition: 0.3s;
+}
+
+.pp_img .property-img:hover {
+    transform: scale(1.1);
+    filter: brightness(0.6);
 }

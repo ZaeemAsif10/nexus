@@ -65,28 +65,36 @@
                 <div class="col-md-12">
                     <div class="row">
                         <div class="text-center col-md-3">
-                            <div class="card-1 mt-3 mt-lg-5 our-mission">
+                            <div class="card-1 mt-3 mt-lg-5 our-mission" data-aos="flip-right"
+                            data-aos-easing="ease-out-cubic"
+                            data-aos-duration="1000">
                                 <h5>Company Tagline</h5>
                                 <p class="p">Where Dreams <br> Come Home</p>
                             </div>
                         </div>
                         <div class="text-center col-md-3">
-                            <div class="card-2 mt-3 mt-lg-5 our-mission">
+                            <div class="card-2 mt-3 mt-lg-5 our-mission" data-aos="flip-left"
+                            data-aos-easing="ease-out-cubic"
+                            data-aos-duration="1000">
                                 <h5>Our Goals</h5>
                                 <p class="p">Our mission is to be serve the community through the best real estate
                                     service</p>
                             </div>
                         </div>
                         <div class="text-center col-md-3">
-                            <div class="card-3 mt-3 mt-lg-5 our-mission">
+                            <div class="card-3 mt-3 mt-lg-5 our-mission" data-aos="flip-right"
+                            data-aos-easing="ease-out-cubic"
+                            data-aos-duration="1000">
                                 <h5>Our Mission</h5>
                                 <p class="p">Our mission is to be
                                     serve the community through the best
                                     real estate service</p>
                             </div>
                         </div>
-                        <div class="text-center col-md-3">
-                            <div class="card-4 mt-3 mt-lg-5 our-mission">
+                        <div class="text-center col-md-3" >
+                            <div class="card-4 mt-3 mt-lg-5 our-mission" data-aos="flip-left"
+                            data-aos-easing="ease-out-cubic"
+                            data-aos-duration="1000">
                                 <h5 class="p">Our Vision</h5>
                                 <p>Our mission is to be serve the community through the best real estate service</p>
                             </div>
@@ -109,9 +117,11 @@
                     @foreach ($data['projects'] as $project)
                         <div class="col-md-6 col-lg-4 image mt-3">
                             <div class="card border-0">
-                                <div class="card-body">
+                                <div class="card-body" data-aos="zoom-in">
+                                  <div class="deal_img">
                                     <img src="{{ asset('storage/app/public/uploads/projects/' . $project->p_image ?? '') }}"
-                                        class="img-fluid project_img" alt="">
+                                    class="img-fluid project_img"  alt="">
+                                  </div>
                                     {{-- <div class="overlay">
                                 <div class="text">
                                     <P class="meet">Al Noor Orchard Housing Scheme</P>
@@ -156,7 +166,8 @@
     </section>
     <section class="know-section bg-c">
         <div class="container">
-            <div class="row">
+            <div class="row"  data-aos="fade-up"
+            data-aos-anchor-placement="top-center">
                 <div class="col-md-6">
                     <div class="con">
                         <div>
@@ -180,20 +191,20 @@
         <div class="container">
             <div class="row">
                 <h1 class="text-center mb-5">OUR SERVICES</h1>
-                <div class="col-md-6 col-lg-3 col-12 text-center service-icons">
+                <div class="col-md-6 col-lg-3 col-12 text-center service-icons" data-aos="fade-up">
                     <p class="m-auto service-icon"><i class="bi bi-house-fill"></i></i></p>
                     <h3 class="mt-3 service-icon">Investment Consultancy</h3>
                 </div>
-                <div class="col-md-6 col-lg-3 col-12 text-center " id="service-icons1">
+                <div class="col-md-6 col-lg-3 col-12 text-center " id="service-icons1" data-aos="fade-right">
                     <p class="m-auto service-icon"><i class="bi bi-bar-chart-fill"></i></p>
                     <h3 class="mt-3 service-icon">Property Management</h3>
                 </div>
 
-                <div class="col-md-6 col-lg-3 col-12 text-center " id="service-icons2">
+                <div class="col-md-6 col-lg-3 col-12 text-center " id="service-icons2" data-aos="fade-left">
                     <p class="m-auto service-icon"><i class="bi bi-building"></i></p>
                     <h3 class="mt-3 service-icon real">Sale / Purchase</h3>
                 </div>
-                <div class="col-md-6 col-lg-3 col-12 text-center " id="service-icons3">
+                <div class="col-md-6 col-lg-3 col-12 text-center " id="service-icons3" data-aos="fade-left">
                     <p class="m-auto service-icon"><i class="bi bi-search"></i></p>
                     <h3 class="mt-3 service-icon real">Realtor’s Growth</h3>
                 </div>
@@ -276,13 +287,22 @@
         <div class="container pt-5">
             <div class="row">
                 <div class="col-md-6">
-                    <h1 class="cosultant">LOOKiNG FOR AN <br> INVESTMENT CONSULTANT?</h1>
+                    <h1 class="cosultant" data-aos="fade-right">LOOKING FOR AN <br> INVESTMENT CONSULTANT?</h1>
                 </div>
-                <div class="col-md-6 mt-4 text-center">
+                <div class="col-md-6 mt-4 text-center" data-aos="fade-left">
                     <a href="{{ url('contact') }}" class="btn btn-default btn-get px-4 py-2"><span>GET IN TOUCH</span></a
                         href="{{ url('contact') }}">
                 </div>
             </div>
         </div>
     </section>
+@endsection
+
+
+@section('scripts')
+    <script>
+        $(document).ready(function () {
+            AOS.init();
+        });
+    </script>
 @endsection

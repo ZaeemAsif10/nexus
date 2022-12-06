@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\DetailSliderController;
 use App\Http\Controllers\Admin\FeatureController;
 use App\Http\Controllers\Admin\ProjectController;
 use Illuminate\Support\Facades\Route;
@@ -35,6 +36,16 @@ Route::group(['middleware' => ['auth', 'can:isAdmin']], function () {
         Route::get('/edit-feature/{id}', 'editFeature');
         Route::post('/update-feature', 'updateFeature');
     });
+
+     //Projects Controller Routes
+     Route::controller(DetailSliderController::class)->group(function () {
+
+        Route::get('/project-detail-slider', 'index')->name('project.detail.slider');
+        Route::any('/create-detail-slider', 'createProjectDetailSlider');
+        Route::get('/edit-detail-slider/{id}', 'editProjectDetailSlider');
+        Route::post('/update-detail-slider', 'updateProjectDetailSlider');
+
+     });
 
 });
 

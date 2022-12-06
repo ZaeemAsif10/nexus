@@ -25,6 +25,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <!-- swiper -->
     <link rel="stylesheet" href="{{ asset('public/web-assets/swiper/swiper-bundle.min.css') }}">
+    {{-- AOS Animation --}}
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <style>
         .parsley-errors-list {
@@ -56,11 +58,15 @@
     <script src="{{ asset('public/web-assets/swiper/swiper-bundle.min.js') }}"></script>
     <!-- main js -->
     <script src="{{ asset('public/web-assets/js/main.js') }}"></script>
+    {{-- AOS Animation --}}
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     {{-- Parseley JS --}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.9.2/parsley.min.js" crossorigin="anonymous"
         referrerpolicy="no-referrer"></script>
     {{-- Validaton --}}
     <script src="{{ asset('public/assets/js/validation.js') }}"></script>
+
+    @yield('scripts')
 
 </body>
 
