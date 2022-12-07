@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\DetailSliderController;
 use App\Http\Controllers\Admin\FeatureController;
 use App\Http\Controllers\Admin\ProjectController;
@@ -44,6 +45,13 @@ Route::group(['middleware' => ['auth', 'can:isAdmin']], function () {
         Route::any('/create-detail-slider', 'createProjectDetailSlider');
         Route::get('/edit-detail-slider/{id}', 'editProjectDetailSlider');
         Route::post('/update-detail-slider', 'updateProjectDetailSlider');
+
+     });
+
+     Route::controller(BlogController::class)->group(function () {
+
+        Route::get('/blog', 'index')->name('blog');
+        Route::any('/create-blog', 'createBlog');
 
      });
 

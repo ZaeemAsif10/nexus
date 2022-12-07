@@ -66,16 +66,14 @@
                     <div class="row">
                         <div class="text-center col-md-3">
                             <div class="card-1 mt-3 mt-lg-5 our-mission" data-aos="flip-right"
-                            data-aos-easing="ease-out-cubic"
-                            data-aos-duration="1000">
+                                data-aos-easing="ease-out-cubic" data-aos-duration="1000">
                                 <h5>Company Tagline</h5>
                                 <p class="p">Where Dreams <br> Come Home</p>
                             </div>
                         </div>
                         <div class="text-center col-md-3">
                             <div class="card-2 mt-3 mt-lg-5 our-mission" data-aos="flip-left"
-                            data-aos-easing="ease-out-cubic"
-                            data-aos-duration="1000">
+                                data-aos-easing="ease-out-cubic" data-aos-duration="1000">
                                 <h5>Our Goals</h5>
                                 <p class="p">Our mission is to be serve the community through the best real estate
                                     service</p>
@@ -83,18 +81,16 @@
                         </div>
                         <div class="text-center col-md-3">
                             <div class="card-3 mt-3 mt-lg-5 our-mission" data-aos="flip-right"
-                            data-aos-easing="ease-out-cubic"
-                            data-aos-duration="1000">
+                                data-aos-easing="ease-out-cubic" data-aos-duration="1000">
                                 <h5>Our Mission</h5>
                                 <p class="p">Our mission is to be
                                     serve the community through the best
                                     real estate service</p>
                             </div>
                         </div>
-                        <div class="text-center col-md-3" >
+                        <div class="text-center col-md-3">
                             <div class="card-4 mt-3 mt-lg-5 our-mission" data-aos="flip-left"
-                            data-aos-easing="ease-out-cubic"
-                            data-aos-duration="1000">
+                                data-aos-easing="ease-out-cubic" data-aos-duration="1000">
                                 <h5 class="p">Our Vision</h5>
                                 <p>Our mission is to be serve the community through the best real estate service</p>
                             </div>
@@ -104,24 +100,26 @@
             </div>
 
             <div class="row mt-5">
-                <div class="col-md-6">
+                <div class="col-lg-6 col-md-5">
                     <h1>We Deal in</h1>
                 </div>
-                <div class="col-md-6 d-flex">
-                    <button type="button" class="btn btn-property form-control me-4">Search Property</button>
-                    <button type="button" class="btn btn-blue form-control">Select Project</button>
+                <div class="col-lg-6 col-md-7">
+                    <div class="resbtn">
+                        <button type="button" class="btn btn-default btn-property">Search Property</button>
+                        <button type="button" class="btn btn-default btn-pro">Select Project</button>
+                    </div>
                 </div>
             </div>
-            <div class="row mt-5">
-                @isset($data)
+            @if (count($data['projects']) > 0)
+                <div class="row mt-5">
                     @foreach ($data['projects'] as $project)
                         <div class="col-md-6 col-lg-4 image mt-3">
                             <div class="card border-0">
                                 <div class="card-body" data-aos="zoom-in">
-                                  <div class="deal_img">
-                                    <img src="{{ asset('storage/app/public/uploads/projects/' . $project->p_image ?? '') }}"
-                                    class="img-fluid project_img"  alt="">
-                                  </div>
+                                    <div class="deal_img">
+                                        <img src="{{ asset('storage/app/public/uploads/projects/' . $project->p_image ?? '') }}"
+                                            class="img-fluid project_img" alt="">
+                                    </div>
                                     {{-- <div class="overlay">
                                 <div class="text">
                                     <P class="meet">Al Noor Orchard Housing Scheme</P>
@@ -132,9 +130,7 @@
                             </div>
                         </div>
                     @endforeach
-                @endisset
-
-                {{-- <div class="col-md-6 col-lg-6 image mb-3">
+                    {{-- <div class="col-md-6 col-lg-6 image mb-3">
                     <img src="{{ asset('public/web-assets/img/banner/img4.jpeg ') }}" class="img-fluid" alt="">
                     <div class="overlay">
                         <div class="text">
@@ -161,37 +157,101 @@
                         </div>
                     </div>
                 </div> --}}
-            </div>
+                </div>
+            @endif
+
         </div>
     </section>
     <section class="know-section bg-c">
         <div class="container">
-            <div class="row"  data-aos="fade-up"
-            data-aos-anchor-placement="top-center">
-                <div class="col-md-6">
-                    <div class="con">
-                        <div>
-                            <h1 class="text-white text-center">Did You Know?</h1>
-                        <h3 class="text-white text-start investing">“</h3>
-                        <p class="text-white text-center investing">90% of the millionaires become so by investing in Real
-                            Estate
-                        </p>
-                        <h3 class="text-white text-end investing">“</h3>
+
+
+
+
+            <div id="testimonial-carousel" class="swiper">
+
+                <div class="swiper-wrapper">
+
+                    <div class="carousel-item-b swiper-slide">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="con">
+                                    <div class="">
+                                        <h1 class="text-white text-center">Did You Know?</h1>
+                                        <h3 class="text-white text-start investing">“</h3>
+                                        <p class="text-white text-center investing">90% of the millionaires become so by
+                                            investing in
+                                            Real
+                                            Estate
+                                        </p>
+                                        <h3 class="text-white text-end investing">“</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 testimonial_img">
+                                <img src="{{ asset('public/web-assets/img/banner/propert.jpeg ') }}" class="property-img"
+                                    alt="" srcset="">
+                            </div>
                         </div>
                     </div>
+
+                    <div class="carousel-item-b swiper-slide">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="con">
+                                    <div class="">
+                                        <h1 class="text-white text-center">Did You Know?</h1>
+                                        <h3 class="text-white text-start investing">“</h3>
+                                        <p class="text-white text-center investing">Ninety percent of all millionaires
+                                            become so through owning real estate.
+                                        </p>
+                                        <h3 class="text-white text-end investing">“</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 testimonial_img">
+                                <img src="{{ asset('public/web-assets/img/banner/busines.png') }}" class="property-img"
+                                    alt="" srcset="">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item-b swiper-slide">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="con">
+                                    <div class="">
+                                        <h1 class="text-white text-center">Did You Know?</h1>
+                                        <h3 class="text-white text-start investing">“</h3>
+                                        <p class="text-white text-center investing">Buying real estate is not only the best
+                                            way, the quickest way, the safest way, but the only way to become wealthy.
+                                        </p>
+                                        <h3 class="text-white text-end investing">“</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 testimonial_img">
+                                <img src="{{ asset('public/web-assets/img/banner/busines2.png') }}" class="property-img"
+                                    alt="" srcset="">
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
-                <div class="col-md-6 testimonial_img">
-                    <img src="{{ asset('public/web-assets/img/banner/propert.jpeg ') }}" class="property-img" alt=""
-                        srcset="">
-                </div>
+
             </div>
+
+
+
         </div>
     </section>
+
+
     <section class="our-services mt-5 ">
         <div class="container">
             <div class="row">
                 <h1 class="text-center mb-5">OUR SERVICES</h1>
-                <div class="col-md-6 col-lg-3 col-12 text-center service-icons" data-aos="fade-up">
+                <div class="col-md-6 col-lg-3 col-12 text-center service-icons" data-aos="fade-right">
                     <p class="m-auto service-icon"><i class="bi bi-house-fill"></i></i></p>
                     <h3 class="mt-3 service-icon">Investment Consultancy</h3>
                 </div>
@@ -210,11 +270,13 @@
                 </div>
             </div>
             <!-- <h1 class="text-center mb-5">OUR SERViCES</h1>
-                                        <div class="row">
+                                                                                                <div class="row">
 
-                                        </div> -->
+                                                                                                </div> -->
         </div>
     </section>
+
+
     <section class="testimonial-section bg-c">
         <div class="container">
             <div class="row pb-5">
@@ -230,7 +292,7 @@
                                     </div>
                                 </div>
                                 <div class="mt-5 text-center">
-                                    <h4 class="mb-0">SAiF UD DiN</h4>
+                                    <h4 class="mb-0">SAIF UD DIN</h4>
                                     <p>What an experience working with Nexus Properties. Extremely Professional and
                                         cooperating.Looking forward to hire them again soon!
                                     </p>
@@ -248,7 +310,7 @@
                                     </div>
                                 </div>
                                 <div class="mt-5 text-center">
-                                    <h4 class="mb-0">SAiF UD DiN</h4>
+                                    <h4 class="mb-0">SAIF UD DIN</h4>
                                     <p>What an experience working with Nexus Properties. Extremely Professional and
                                         cooperating.Looking forward to hire them again soon!
                                     </p>
@@ -266,7 +328,7 @@
                                     </div>
                                 </div>
                                 <div class="mt-5 text-center">
-                                    <h4 class="mb-0">SAiF UD DiN</h4>
+                                    <h4 class="mb-0">SAIF UD DIN</h4>
                                     <p>What an experience working with Nexus Properties. Extremely Professional and
                                         cooperating.Looking forward to hire them again soon!
                                     </p>
@@ -301,7 +363,7 @@
 
 @section('scripts')
     <script>
-        $(document).ready(function () {
+        $(document).ready(function() {
             AOS.init();
         });
     </script>

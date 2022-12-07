@@ -250,53 +250,58 @@
                 </p>
             </div>
 
-            <div class="row text-center">
-                <div class="col-sm-12 col-md-6 col-lg-6 mb-5 mt-5">
-                    <img src="{{ asset('public/web-assets/img/nexues logo.png') }}" class="nexus" data-aos="fade-right"
-                        data-aos-offset="300" data-aos-easing="ease-in-sine" alt="">
-                </div>
-                <div class="col-sm-12 col-md-6 col-lg-6 mb-5">
-                    <h1 class="text-center mt-5 mb-3 cont-us">FOR BOOKING & DETAILS</h1>
-                    @if (session()->has('message'))
-                        <div class="alert alert-success">
-                            {{ session()->get('message') }}
+            <section class="nex-log">
+                <div class="row text-center">
+                    <div class="col-sm-12 col-md-6 col-lg-6">
+                        <div class="con">
+                            <img src="{{ asset('public/web-assets/img/nexues logo.png') }}" class="nexus" data-aos="fade-right"
+                            data-aos-offset="300" data-aos-easing="ease-in-sine" alt="">
                         </div>
-                    @endif
-                    <form action="{{ url('contact-mail') }}" method="post" role="form" class="validation-form">
-                        @csrf
-                        <div class="row">
-                            <div class="col-md-6 mb-3">
-                                <div class="form-group">
-                                    <input type="text" name="name"
-                                        class="form-control form-control-lg form-control-a" placeholder="Name" required>
+                    </div>
+    
+                    <div class="col-sm-12 col-md-6 col-lg-6">
+                        <h1 class="text-center mt-5 mb-3 cont-us">FOR BOOKING & DETAILS</h1>
+                        @if (session()->has('message'))
+                            <div class="alert alert-success">
+                                {{ session()->get('message') }}
+                            </div>
+                        @endif
+                        <form action="{{ url('contact-mail') }}" method="post" role="form" class="validation-form">
+                            @csrf
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" name="name"
+                                            class="form-control form-control-lg form-control-a" placeholder="Name" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input name="email" type="email"
+                                            class="form-control form-control-lg form-control-a" placeholder="Eamil" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 mt-3">
+                                    <div class="form-group">
+                                        <input name="subject" type="text"
+                                            class="form-control form-control-lg form-control-a" placeholder="Subject"
+                                            required>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 mt-3">
+                                    <div class="form-group">
+                                        <textarea name="message" class="form-control" name="message" cols="45" rows="4"
+                                            placeholder="Leave a message!" required></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 text-center mt-3">
+                                    <button type="submit" class="btn btn-gold">Send Message</button>
                                 </div>
                             </div>
-                            <div class="col-md-6 mb-3">
-                                <div class="form-group">
-                                    <input name="email" type="email"
-                                        class="form-control form-control-lg form-control-a" placeholder="Eamil" required>
-                                </div>
-                            </div>
-                            <div class="col-md-12 mb-3">
-                                <div class="form-group">
-                                    <input name="subject" type="text"
-                                        class="form-control form-control-lg form-control-a" placeholder="Subject"
-                                        required>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <textarea name="message" class="form-control" name="message" cols="45" rows="4"
-                                        placeholder="Leave a message!" required></textarea>
-                                </div>
-                            </div>
-                            <div class="col-md-12 text-center mt-3">
-                                <button type="submit" class="btn btn-gold">Send Message</button>
-                            </div>
-                        </div>
-                    </form>
+                        </form>
+                    </div>
                 </div>
-            </div>
+            </section>
 
 
             <!-- <section class="pagination-section">

@@ -18,6 +18,21 @@
                     </li>
 
                     <li class="submenu">
+                        <a href="#" class=""><i class="la la-project-diagram"></i> <span>Slider</span> <span
+                                class="menu-arrow"></span></a>
+                        <ul
+                            @if (Route::is('home.slider')) style="display: block;"
+                            @else
+                            style="display: none;" @endif>
+
+                            <li>
+                                <a class="{{ Route::is('home.slider') ? 'menuss-active' : '' }}"
+                                    href="{{ route('home.slider') }}"> <span>Home Slider</span></a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="submenu">
                         <a href="#" class=""><i class="la la-project-diagram"></i> <span>Project
                                 Management</span> <span class="menu-arrow"></span></a>
                         <ul
@@ -42,17 +57,19 @@
                         </ul>
                     </li>
 
+                   
+
                     <li class="submenu">
-                        <a href="#" class=""><i class="la la-project-diagram"></i> <span>Slider</span> <span
+                        <a href="#" class=""><i class="la la-project-diagram"></i> <span>Blogs Management</span> <span
                                 class="menu-arrow"></span></a>
                         <ul
-                            @if (Route::is('home.slider')) style="display: block;"
+                            @if (Route::is('blog')) style="display: block;"
                             @else
                             style="display: none;" @endif>
 
                             <li>
-                                <a class="{{ Route::is('home.slider') ? 'menuss-active' : '' }}"
-                                    href="{{ route('home.slider') }}"> <span>Home Slider</span></a>
+                                <a class="{{ Route::is('blog') ? 'menuss-active' : '' }}"
+                                    href="{{ route('blog') }}"> <span>BLogs</span></a>
                             </li>
                         </ul>
                     </li>

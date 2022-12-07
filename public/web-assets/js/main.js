@@ -27,4 +27,28 @@ new Swiper('#property-carousel', {
     }
   });
   // WHAT OUR CLIENT’S SAY ABOUT US
+
+  new Swiper('#testimonial-carousel', {
+    speed: 600,
+    loop: true,
+    autoplay: {
+      delay: 2000,
+      disableOnInteraction: false
+    },
+    slidesPerView: 'auto',
+    breakpoints: {
+      320: {
+        slidesPerView: 1,
+        spaceBetween: 20
+      },
+      600: {
+        slidesPerView: 1,
+        spaceBetween: 20
+      },
+      1200: {
+        slidesPerView: 1,
+        spaceBetween: 20
+      }
+    }
+  });
  
