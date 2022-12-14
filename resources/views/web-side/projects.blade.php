@@ -136,7 +136,33 @@
                 </div>
             </div>
 
-            <div class="row mt-5">
+
+
+
+            <section class="p-4">
+                <div class="row pt-5 pb-5">
+                    <h1 class="color-a text-center" id="cosultant1">GALLERY</h1>
+                    <div id="project-carousel" class="swiper" style="">
+                        <div class="swiper-wrapper">
+                            @foreach ($data['project_slider'] as $key => $project_slid)
+                                <div class="col-sm-12 col-md-6 col-lg-4 pt-5 mt-5  carousel-item-b swiper-slide">
+                                    <img src="{{ asset('storage/app/public/uploads/project/detail/slider/' . $project_slid->slide_image ?? '') }}"
+                                        class="img-fluid" alt="" srcset="">
+                                </div>
+                            @endforeach
+
+                        </div>
+
+                        {{-- <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div> --}}
+                    </div>
+
+                </div>
+            </section>
+
+
+
+            {{-- <div class="row mt-5">
                 <div class="col-sm-12 col-md-6 col-lg-6 mb-5 mt-5" data-aos="fade-up-right">
 
                     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
@@ -238,27 +264,29 @@
                         </div>
                     </section>
                 </div>
-                <h1 class="text-center mt-3">THE LOCATION MAP</h1>
-                <p class="text-center">Al Noor Orchard West Marina Cottages and Villas, Lahore-Jaranwala Road, Lahore,
-                    Pakistan
-                <div class="row text-center">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d13608.35224620967!2d74.41738735000001!3d31.494263199999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1665753179364!5m2!1sen!2s"
-                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
-                </p>
+            </div> --}}
+
+            <h1 class="text-center mt-3">THE LOCATION MAP</h1>
+            <p class="text-center">Al Noor Orchard West Marina Cottages and Villas, Lahore-Jaranwala Road, Lahore,
+                Pakistan
+            <div class="row text-center">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d13608.35224620967!2d74.41738735000001!3d31.494263199999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1665753179364!5m2!1sen!2s"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
+            </p>
 
             <section class="nex-log">
                 <div class="row text-center">
                     <div class="col-sm-12 col-md-6 col-lg-6">
                         <div class="con">
-                            <img src="{{ asset('public/web-assets/img/nexues logo.png') }}" class="nexus" data-aos="fade-right"
-                            data-aos-offset="300" data-aos-easing="ease-in-sine" alt="">
+                            <img src="{{ asset('public/web-assets/img/nexues logo.png') }}" class="nexus"
+                                data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine"
+                                alt="">
                         </div>
                     </div>
-    
+
                     <div class="col-sm-12 col-md-6 col-lg-6">
                         <h1 class="text-center mt-5 mb-3 cont-us">FOR BOOKING & DETAILS</h1>
                         @if (session()->has('message'))
@@ -272,13 +300,15 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <input type="text" name="name"
-                                            class="form-control form-control-lg form-control-a" placeholder="Name" required>
+                                            class="form-control form-control-lg form-control-a" placeholder="Name"
+                                            required>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <input name="email" type="email"
-                                            class="form-control form-control-lg form-control-a" placeholder="Eamil" required>
+                                            class="form-control form-control-lg form-control-a" placeholder="Eamil"
+                                            required>
                                     </div>
                                 </div>
                                 <div class="col-md-12 mt-3">
@@ -305,24 +335,24 @@
 
 
             <!-- <section class="pagination-section">
-                                    <nav aria-label="Page navigation example">
-                                        <ul class="pagination justify-content-end">
-                                          <li class="page-item">
-                                            <a class="page-link me-2" href="#" aria-label="Previous">
-                                              <span aria-hidden="true">&laquo;</span>
-                                            </a>
-                                          </li>
-                                          <li class="page-item me-2"><a class="page-link" href="#">1</a></li>
-                                          <li class="page-item me-2"><a class="page-link" href="#">2</a></li>
-                                          <li class="page-item me-2"><a class="page-link" href="#">3</a></li>
-                                          <li class="page-item">
-                                            <a class="page-link" href="#" aria-label="Next">
-                                              <span aria-hidden="true">&raquo;</span>
-                                            </a>
-                                          </li>
-                                        </ul>
-                                    </nav>
-                                </section> -->
+                                                    <nav aria-label="Page navigation example">
+                                                        <ul class="pagination justify-content-end">
+                                                          <li class="page-item">
+                                                            <a class="page-link me-2" href="#" aria-label="Previous">
+                                                              <span aria-hidden="true">&laquo;</span>
+                                                            </a>
+                                                          </li>
+                                                          <li class="page-item me-2"><a class="page-link" href="#">1</a></li>
+                                                          <li class="page-item me-2"><a class="page-link" href="#">2</a></li>
+                                                          <li class="page-item me-2"><a class="page-link" href="#">3</a></li>
+                                                          <li class="page-item">
+                                                            <a class="page-link" href="#" aria-label="Next">
+                                                              <span aria-hidden="true">&raquo;</span>
+                                                            </a>
+                                                          </li>
+                                                        </ul>
+                                                    </nav>
+                                                </section> -->
 
         </div>
     </section>

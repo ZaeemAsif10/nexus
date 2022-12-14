@@ -52,6 +52,8 @@ Route::group(['middleware' => ['auth', 'can:isAdmin']], function () {
 
         Route::get('/blog', 'index')->name('blog');
         Route::any('/create-blog', 'createBlog');
+        Route::get('/edit-blog/{id}', 'editBlog');
+        Route::post('/update-blog', 'updateBlog');
 
      });
 

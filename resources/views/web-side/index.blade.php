@@ -276,7 +276,6 @@
         </div>
     </section>
 
-
     <section class="testimonial-section bg-c">
         <div class="container">
             <div class="row pb-5">
@@ -345,6 +344,7 @@
         </div>
 
     </section>
+    
     <section class="get-in-touch-section mt-5 mb-5">
         <div class="container pt-5">
             <div class="row">

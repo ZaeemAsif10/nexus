@@ -69,7 +69,7 @@
 
                             <li>
                                 <a class="{{ Route::is('blog') ? 'menuss-active' : '' }}"
-                                    href="{{ route('blog') }}"> <span>BLogs</span></a>
+                                    href="{{ route('blog') }}"> <span>Blogs</span></a>
                             </li>
                         </ul>
                     </li>

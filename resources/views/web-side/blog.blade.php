@@ -19,6 +19,9 @@
         <div class="container">
             <div class="row">
                 <h1 class="text-center mb-5">Our <span class="color-a">Blog</span></h1>
+
+                @if (count($data['blogs']) > 0)
+                @foreach ($data['blogs'] as $blog)
                 <div class="col-sm-12 col-md-6 col-lg-4 mb-5">
                     <div class="card border-0" style="width: 100%;">
                         <div class="image">
@@ -26,95 +29,19 @@
                         </div>
                         <div class="card-body">
                             <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                            <h3 class="card-title">Lorem ipsum dolor sit amet.
+                            <h3 class="card-title b-crd-t">{{ $blog->title }}
                             </h3>
-                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore eaque
-                                nihil, libero laborum pariatur labore sequi explicabo blanditiis ut repellat aperiam
-                                suscipit natus id aspernatur quidem, quas facere ea provident.</p>
+                            <p class="card-text">{{ $blog->description }}</p>
                             <a href="blog-details.html" class="btn btn-gold">More Details</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-12 col-md-6 col-lg-4 mb-5">
-                    <div class="card border-0" style="width: 100%;">
-                        <div class="image">
-                            <img src="{{ asset('public/web-assets/img/NEXUS_BLOG.jpeg ')}}" class="card-img-top" alt="...">
-                        </div>
-                        <div class="card-body">
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                            <h3 class="card-title">Lorem ipsum dolor sit amet.
-                            </h3>
-                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore eaque
-                                nihil, libero laborum pariatur labore sequi explicabo blanditiis ut repellat aperiam
-                                suscipit natus id aspernatur quidem, quas facere ea provident.</p>
-                            <a href="blog-details.html" class="btn btn-gold">More Details</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-12 col-md-6 col-lg-4 mb-5">
-                    <div class="card border-0" style="width: 100%;">
-                        <div class="image">
-                            <img src="{{ asset('public/web-assets/img/NEXUS_BLOG.jpeg ')}}" class="card-img-top" alt="...">
-                        </div>
-                        <div class="card-body">
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                            <h3 class="card-title">Lorem ipsum dolor sit amet.
-                            </h3>
-                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore eaque
-                                nihil, libero laborum pariatur labore sequi explicabo blanditiis ut repellat aperiam
-                                suscipit natus id aspernatur quidem, quas facere ea provident.</p>
-                            <a href="blog-details.html" class="btn btn-gold">More Details</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-12 col-md-6 col-lg-4 mb-5">
-                    <div class="card border-0" style="width: 100%;">
-                        <div class="image">
-                            <img src="{{ asset('public/web-assets/img/NEXUS_BLOG.jpeg ')}}" class="card-img-top" alt="...">
-                        </div>
-                        <div class="card-body">
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                            <h3 class="card-title">Lorem ipsum dolor sit amet.
-                            </h3>
-                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore eaque
-                                nihil, libero laborum pariatur labore sequi explicabo blanditiis ut repellat aperiam
-                                suscipit natus id aspernatur quidem, quas facere ea provident.</p>
-                            <a href="blog-details.html" class="btn btn-gold">More Details</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-12 col-md-6 col-lg-4 mb-5">
-                    <div class="card border-0" style="width: 100%;">
-                        <div class="image">
-                            <img src="{{ asset('public/web-assets/img/NEXUS_BLOG.jpeg ')}}" class="card-img-top" alt="...">
-                        </div>
-                        <div class="card-body">
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                            <h3 class="card-title">Lorem ipsum dolor sit amet.
-                            </h3>
-                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore eaque
-                                nihil, libero laborum pariatur labore sequi explicabo blanditiis ut repellat aperiam
-                                suscipit natus id aspernatur quidem, quas facere ea provident.</p>
-                            <a href="blog-details.html" class="btn btn-gold">More Details</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-12 col-md-6 col-lg-4 mb-5">
-                    <div class="card border-0" style="width: 100%;">
-                        <div class="image">
-                            <img src="{{ asset('public/web-assets/img/NEXUS_BLOG.jpeg ')}}" class="card-img-top" alt="...">
-                        </div>
-                        <div class="card-body">
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                            <h3 class="card-title">Lorem ipsum dolor sit amet.
-                            </h3>
-                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore eaque
-                                nihil, libero laborum pariatur labore sequi explicabo blanditiis ut repellat aperiam
-                                suscipit natus id aspernatur quidem, quas facere ea provident.</p>
-                            <a href="blog-details.html" class="btn btn-gold">More Details</a>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
+               
+                @endif
+
+               
+
                 <section class="pagination-section">
                     <nav aria-label="Page navigation example">
                         <ul class="pagination justify-content-end">

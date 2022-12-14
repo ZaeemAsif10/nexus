@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Website;
 
 use App\Http\Controllers\Controller;
 use App\Mail\ContactMail;
+use App\Models\Blog;
 use App\Models\HomeSlider;
 use App\Models\Project;
 use App\Models\Feature;
@@ -39,7 +40,7 @@ class WebController extends Controller
             'message' => $request->message,
         ];
 
-        Mail::to('zaeemasif1123@gmail.com')->send(new ContactMail($details));
+        Mail::to($request->email)->send(new ContactMail($details));
         return redirect()->back()->with('message', 'Email send successfully');
     }
 
@@ -53,6 +54,7 @@ class WebController extends Controller
 
     public function Blogs()
     {
-        return view('web-side.blog');
+        $data['blogs'] = Blog::where('status','!=',1)->get();
+        return view('web-side.blog', compact('data'));
     }
 }

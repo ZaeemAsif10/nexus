@@ -7,10 +7,10 @@
             <div class="page-header">
                 <div class="row align-items-center">
                     <div class="col">
-                        <h3 class="page-title">Edit Project Slider Detail</h3>
+                        <h3 class="page-title">Edit Blogs</h3>
                         <ul class="breadcrumb">
                             <li class="breadcrumb-item"><a href="{{ url('admin') }}">Dashboard</a></li>
-                            <li class="breadcrumb-item active">Edit Project Slider Detail</li>
+                            <li class="breadcrumb-item active">Edit Blogs</li>
                         </ul>
                     </div>
                 </div>
@@ -21,49 +21,41 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title mb-0">Edit Project Slider Detail</h4>
+                            <h4 class="card-title mb-0">Edit Blogs</h4>
                         </div>
                         <div class="card-body">
-                            <form action="{{ url('update-detail-slider') }}" method="POST" id="projectForm"
-                                class="validation-form" enctype="multipart/form-data">
-                                <input type="hidden" name="edit_detail_id" value="{{ $data['detail_slider']->id }}">
+                            <form action="{{ url('update-blog') }}" method="POST" id="projectForm222" class="validation-form"
+                                enctype="multipart/form-data">
                                 @csrf
+                                <input type="hidden" name="edit_blog_id" value="{{ $data['blog']->id }}">
                                 <div class="row">
-                                    <div class="col-md-4">
-                                        <div class="form-group">
-                                            <label>Project</label>
-                                            <select name="project_id" class="form-control" required>
-                                                <option value="" selected disabled>Choose</option>
-                                                @isset($data)
-                                                    @foreach ($data['projects'] as $project)
-                                                        <option value="{{ $project->id }}"
-                                                        {{ $data['detail_slider']->project_id == $project->id ? 'selected' : '' }}
-                                                        >{{ $project->name }}</option>
-                                                    @endforeach
-                                                @endisset
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Title</label>
-                                            <input type="text" name="title" value="{{ $data['detail_slider']->title }}"
-                                                class="form-control" required>
+                                            <input type="text" name="title" value="{{ $data['blog']->title }}"
+                                                class="form-control" placeholder="Enter Title" required>
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Image</label>
-                                            <input type="file" name="slide_image" class="form-control">
-                                            <img src="{{ asset('storage/app/public/uploads/project/detail/slider/' . $data['detail_slider']->slide_image) }}"
-                                                width="50px" class="mt-3" alt="">
+                                            <input type="file" name="image" class="form-control"
+                                                placeholder="Enter Title" required>
+                                            <img src="{{ asset('storage/app/public/uploads/blogs/' . $data['blog']->image ?? '') }}"
+                                                width="50" class="mt-3" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Description</label>
+                                            <textarea class="form-control" name="description" cols="30" rows="4" placeholder="Write here..." required>{{ $data['blog']->description }}</textarea>
                                         </div>
                                     </div>
                                 </div>
 
                         </div>
                         <div class="text-right">
-                            <button type="submit" class="btn btn-primary mb-2 mr-2">Save Changes</button>
+                            <button type="submit" class="btn btn-primary save_project mb-2 mr-2">Save Changes</button>
                         </div>
                         </form>
 
@@ -79,6 +71,50 @@
 @section('scripts')
     <script>
         $(document).ready(function() {
+
+
+            // save projects
+            $('#projectForm').on('submit', function(e) {
+                e.preventDefault();
+
+                let formData = new FormData($('#projectForm')[0]);
+
+                $.ajax({
+                    type: "POST",
+                    url: "{{ url('create-blog') }}",
+                    data: formData,
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    contentType: false,
+                    processData: false,
+                    beforeSend: function() {
+                        $('.save_project').text('Saving...');
+                        $(".save_project").prop("disabled", true);
+                    },
+                    success: function(response) {
+
+                        if (response.status == 200) {
+                            toastr.success(response.success);
+                            $('.save_project').text('Save');
+                            $(".save_project").prop("disabled", false);
+                            $('#projectForm').trigger("reset");
+                        }
+
+                        if (response.errors) {
+                            $('.save_project').text('Save');
+                            $(".save_project").prop("disabled", false);
+                            toastr.error(response.errors);
+                        }
+                    },
+                    error: function() {
+                        $('.save_project').text('Save');
+                        $(".save_project").prop("disabled", false);
+                        toastr.error('something went wrong');
+                    },
+                });
+
+            });
 
 
         });

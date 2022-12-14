@@ -122,13 +122,13 @@
                             html += '<tr>' +
                                 '<td>' + c + '</td>' +
                                 '<td>' + data[i].title + '</td>' +
-                                '<td><img src="{{ asset('storage/app/public/uploads/project/detail/slider/') }}/' +
-                                data[i].slide_image + '" width="50px" height="40px" ></td>' +
+                                '<td><img src="{{ asset('storage/app/public/uploads/blogs/') }}/' +
+                                data[i].image + '" width="50px" height="40px" ></td>' +
                                 '<td class="text-right">' +
                                 '<div class="dropdown dropdown-action">' +
                                 '<a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>' +
                                 '<div class="dropdown-menu dropdown-menu-right">' +
-                                '<a class="dropdown-item" href="edit-detail-slider/' + data[i].id +
+                                '<a class="dropdown-item" href="edit-blog/' + data[i].id +
                                 '"><i class="la la-pencil" style="font-size:20px;"></i></a>' +
                                 '</div>' +
                                 '</div>' +

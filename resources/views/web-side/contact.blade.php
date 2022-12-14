@@ -37,10 +37,10 @@
                         <div class="card-body">
                             <h4 class="card-title title-cont">CONTACT NUMBER</h4>
                             <p class="card-text mt-4">
-                            <h6 class="fw-bold" style="font-size:10px ;">PLAZA 3 COMMERCiAL RAYA GOLF COURSE
+                            <h6 class="fw-bold c-txt" style="font-size:10px ;">PLAZA 3 COMMERCiAL RAYA GOLF COURSE
                                 DHA PHASE 6 LAHORE</h6>
                             <p class="card-text mt-0">
-                            <h6 class="fw-bold" style="font-size:9px ;">3KM FAiZPUR iNTERCHANGE MOTORWAY
+                            <h6 class="fw-bold c-txt" style="font-size:9px ;">3KM FAiZPUR iNTERCHANGE MOTORWAY
                                 M2 MAiN SHARAQPUR ROAD LAHORE.</h6>
                         </div>
                     </div>

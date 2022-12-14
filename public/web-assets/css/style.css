@@ -20,8 +20,12 @@ h6 {
     font-family: 'Raleway', sans-serif !important;
 }
 
+.c-txt{
+    font-family: 'Poppins', sans-serif !important;
+}
+
 p{
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', sans-serif !important;
 }
 
 h4{
@@ -448,6 +452,11 @@ a:hover {
     margin-bottom: 1.2rem;
 }
 
+.foot-list{
+    list-style: none;
+    margin-left: -2rem;
+}
+
 .footer ul li a {
     text-decoration: none;
     color: black;
@@ -694,7 +703,7 @@ a:hover {
     color: #092C3F;
     font-size: 35px !important;
     font-weight: bold !important;
-    font-family: 'LEMON MILK', sans-serif;
+    font-family: 'LEMON MILK', sans-serif !important;
 
 }
 
@@ -1130,7 +1139,7 @@ footer .no-padding {
 .footer-big .footer-menu ul li a,
 .footer-big p,
 .footer-big ul li {
-    color: #898b96
+    color: #fff;
 }
 
 .footer-menu {
@@ -1176,6 +1185,7 @@ footer .widget-about .contact-details {
 
 footer .widget-about .contact-details li {
     margin-bottom: 10px;
+    list-style: none;
 }
 
 footer .widget-about .contact-details li:last-child {
@@ -1187,7 +1197,7 @@ footer .widget-about .contact-details li span {
 }
 
 footer .widget-about .contact-details li a {
-    color: #5867dd;
+    color: #fff;
     text-decoration: none !important;
 }
 
@@ -1244,4 +1254,8 @@ footer .widget-about .contact-details li a {
 .pp_img .property-img:hover {
     transform: scale(1.1);
     filter: brightness(0.6);
+}
+
+.b-crd-t{
+    font-size: 20px;
 }
