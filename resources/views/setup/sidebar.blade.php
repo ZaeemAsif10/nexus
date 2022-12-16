@@ -57,8 +57,6 @@
                         </ul>
                     </li>
 
-                   
-
                     <li class="submenu">
                         <a href="#" class=""><i class="la la-project-diagram"></i> <span>Blogs Management</span> <span
                                 class="menu-arrow"></span></a>
@@ -70,6 +68,21 @@
                             <li>
                                 <a class="{{ Route::is('blog') ? 'menuss-active' : '' }}"
                                     href="{{ route('blog') }}"> <span>Blogs</span></a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="submenu">
+                        <a href="#" class=""><i class="la la-project-diagram"></i> <span>Team Management</span> <span
+                                class="menu-arrow"></span></a>
+                        <ul
+                            @if (Route::is('team')) style="display: block;"
+                            @else
+                            style="display: none;" @endif>
+
+                            <li>
+                                <a class="{{ Route::is('team') ? 'menuss-active' : '' }}"
+                                    href="{{ route('team') }}"> <span>Team</span></a>
                             </li>
                         </ul>
                     </li>

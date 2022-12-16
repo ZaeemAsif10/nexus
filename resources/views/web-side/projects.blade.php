@@ -8,7 +8,7 @@
                     aria-label="breadcrumb">
                     <h1 class="color-a">{{ $data['projects']->name ?? '' }}</h1>
                     <ol class="breadcrumb justify-content-center">
-                        <li class="breadcrumb-item active" aria-current="page">Home</li>
+                        {{-- <li class="breadcrumb-item active" aria-current="page">Home</li> --}}
                         <li class="breadcrumb-item active" aria-current="page">Project</li>
                     </ol>
                 </nav>
@@ -139,7 +139,7 @@
 
             <section class="p-4">
                 <div class="row pt-5 pb-5">
-                    <h1 class="color-a text-center" id="cosultant1">GALLERY</h1>
+                    <h1 class="text-center gall"><span class="color-a">GALLERY</span></h1>
                     <div id="project-carousel" class="swiper" style="">
                         <div class="swiper-wrapper">
                             @foreach ($data['project_slider'] as $key => $project_slid)
@@ -279,7 +279,7 @@
                 <div class="row text-center">
                     <div class="col-sm-12 col-md-6 col-lg-6">
                         <div class="con">
-                            <img src="{{ asset('public/web-assets/img/nexues logo.png') }}" class="nexus"
+                            <img src="{{ asset('public/web-assets/img/nexues logo.png') }}" class="nexus_logoss"
                                 data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine"
                                 alt="">
                         </div>
@@ -292,17 +292,17 @@
                                 {{ session()->get('message') }}
                             </div>
                         @endif
-                        <form action="{{ url('contact-mail') }}" method="post" role="form" class="validation-form">
+                        <form action="{{ url('contact-mail') }}" method="post" role="form">
                             @csrf
                             <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-md-6 mt-3">
                                     <div class="form-group">
                                         <input type="text" name="name"
                                             class="form-control form-control-lg form-control-a" placeholder="Name"
                                             required>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-6 mt-3">
                                     <div class="form-group">
                                         <input name="email" type="email"
                                             class="form-control form-control-lg form-control-a" placeholder="Eamil"

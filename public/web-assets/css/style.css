@@ -11,7 +11,7 @@ html {
 }
 
 body {
-    overflow-y: hidden;
+    overflow-x: hidden;
 }
 
 h1,
@@ -34,6 +34,10 @@ h4 {
 
 .nex-log {
     padding: 50px 0px;
+}
+
+.gall{
+    margin-bottom: -3rem !important;
 }
 
 
@@ -114,11 +118,10 @@ a:hover {
 }
 
 .btn-gold {
-    font-family: 'Rubik', sans-serif;
+    font-family: 'Raleway', sans-serif !important;
     background-color: #CAB65D !important;
-    padding-left: 20px !important;
-    padding-right: 20px !important;
     border-radius: 30px !important;
+    padding: 10px 30px !important;
     border: 1px solid #CAB65D !important;
     font-size: .8rem !important;
     /* font-weight: 500 !important; */
@@ -676,8 +679,8 @@ a:hover {
 .charman-section .ch-img {
     margin-top: 50px;
     border-radius: 50%;
-    width: 76%;
-    height: 45vh;
+    width: 100%;
+    height: 85%;
 
 }
 
@@ -734,6 +737,10 @@ a:hover {
         padding: 0px 0rem;
     }
 
+    /* p{
+        font-size: 12px !important;
+    } */
+
 }
 
 @media screen and (max-width:1043px) {
@@ -762,9 +769,9 @@ a:hover {
         height: 50% !important;
     }
 
-    .charman-section .ch-img {
+    /* .charman-section .ch-img {
         width: 120%;
-    }
+    } */
 
     .know-section p {
         font-size: 1rem !important;
@@ -793,6 +800,11 @@ a:hover {
 
     .btn-property {
         height: 100% !important;
+        font-size: 10px !important;
+    }
+    
+    .btn-pro{
+        font-size: 12px !important;
     }
 
     .btn-blue {
@@ -860,7 +872,6 @@ a:hover {
     .nexus {
         margin-left: 0px !important;
         height: 100% !important;
-        ;
     }
 
     .footer-section .footer-top .widget-title {
@@ -871,6 +882,10 @@ a:hover {
     .footer-top p,
     .company-footer-contact-list li {
         font-size: 14px !important;
+        -webkit-text-fill-color: rgb(248, 246, 246) !important;
+        -webkit-opacity: 1;
+        color: rgb(248, 246, 246) !important;
+
     }
 
     .footer-section ul{
@@ -879,6 +894,22 @@ a:hover {
 
     .card-section .card {
         height: 200px !important;
+    }
+
+    .nexus_logoss{
+        width: 65% !important;
+        height: auto !important;
+    }
+
+    .testimonial-section .profile {
+        position: absolute;
+        top: -50px;
+        left: 33%;
+        height: 90px;
+        width: 90px;
+        border: 3px solid #092C3F;
+        z-index: 999;
+        border-radius: 50%;
     }
 }
 
@@ -1098,11 +1129,11 @@ a:hover {
     text-align: center;
 }
 
-.nexus {
+/* .nexus {
     width: 65% !important;
     height: 90%;
     margin-left: 80px;
-}
+} */
 
 .filip {
     width: 15%;

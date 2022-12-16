@@ -8,7 +8,7 @@
                     aria-label="breadcrumb">
                     <h1 class="color-a">Contact Us</h1>
                     <ol class="breadcrumb justify-content-center">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        {{-- <li class="breadcrumb-item"><a href="#">Home</a></li> --}}
                         <li class="breadcrumb-item active" aria-current="page">Contact Us</li>
                     </ol>
                 </nav>
@@ -125,7 +125,7 @@
                                             placeholder="Leave a message!" required></textarea>
                                     </div>
                                 </div>
-                                <div class="col-md-12 text-center mt-3">
+                                <div class="col-md-12 text-center mt-4">
                                     <button type="submit" class="btn btn-gold">Send Message</button>
                                 </div>
                             </div>

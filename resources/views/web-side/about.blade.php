@@ -8,7 +8,7 @@
                     aria-label="breadcrumb">
                     <h1 class="color-a">ABOUT OUR COMPANY</h1>
                     <ol class="breadcrumb justify-content-center">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        {{-- <li class="breadcrumb-item"><a href="#">Home</a></li> --}}
                         <li class="breadcrumb-item active" aria-current="page">About</li>
                     </ol>
                 </nav>
@@ -56,59 +56,59 @@
                                 Tagline</h4>
                             <p>Our mission is to be serve the community through the best real estate service</p>
                             <!-- <div class="overlay-2">
-                                <div class="text-2">
-                                    <P class="meet-choose"> Al Noor Orchard Housing Scheme</P>
-        
-                                </div>
-                            </div> -->
+                                                    <div class="text-2">
+                                                        <P class="meet-choose"> Al Noor Orchard Housing Scheme</P>
+                            
+                                                    </div>
+                                                </div> -->
                         </div>
                     </div>
                 </div>
                 <div class="col-sm-12 col-md-3  col-lg-3 mt-2">
                     <div class="card why-choose" data-aos="flip-left" data-aos-easing="ease-out-cubic"
-                    data-aos-duration="1000">
+                        data-aos-duration="1000">
                         <div class="card-body text-center">
                             <p><i class="bi bi-people color-a"></i></p>
                             <h4 class="">Our Mission</h4>
                             <p>Our mission is to be serve the community through the best real estate service</p>
                             <!-- <div class="overlay-2">
-                                <div class="text-2">
-                                    <P class="meet-choose"> Al Noor Orchard Housing Scheme</P>
-        
-                                </div>
-                            </div> -->
+                                                    <div class="text-2">
+                                                        <P class="meet-choose"> Al Noor Orchard Housing Scheme</P>
+                            
+                                                    </div>
+                                                </div> -->
                         </div>
                     </div>
                 </div>
                 <div class="col-sm-12 col-md-3  col-lg-3 mt-2">
                     <div class="card why-choose" data-aos="flip-right" data-aos-easing="ease-out-cubic"
-                    data-aos-duration="1000">
+                        data-aos-duration="1000">
                         <div class="card-body text-center">
                             <p><i class="bi bi-wallet-fill color-a"></i></p>
                             <h4 class="">Our Goals</h4>
                             <p>Our mission is to be serve the community through the best real estate service</p>
                             <!-- <div class="overlay-2">
-                                <div class="text-2">
-                                    <P class="meet-choose"> Al Noor Orchard Housing Scheme</P>
-        
-                                </div>
-                            </div> -->
+                                                    <div class="text-2">
+                                                        <P class="meet-choose"> Al Noor Orchard Housing Scheme</P>
+                            
+                                                    </div>
+                                                </div> -->
                         </div>
                     </div>
                 </div>
                 <div class="col-sm-12 col-md-3  col-lg-3 mt-2">
                     <div class="card why-choose" data-aos="flip-left" data-aos-easing="ease-out-cubic"
-                    data-aos-duration="1000">
+                        data-aos-duration="1000">
                         <div class="card-body text-center">
                             <p><i class="bi bi-wallet-fill color-a"></i></p>
                             <h4 class="">Our Vision</h4>
                             <p>Our mission is to be serve the community through the best real estate service</p>
                             <!-- <div class="overlay-2">
-                                <div class="text-2">
-                                    <P class="meet-choose"> Al Noor Orchard Housing Scheme</P>
-        
-                                </div>
-                            </div> -->
+                                                    <div class="text-2">
+                                                        <P class="meet-choose"> Al Noor Orchard Housing Scheme</P>
+                            
+                                                    </div>
+                                                </div> -->
                         </div>
                     </div>
                 </div>
@@ -137,164 +137,60 @@
             </div>
         </div>
     </section>
-    <section>
 
-        <div class="container-fluid helloooas">
-            <div class="row mt-5 mb-4">
-                <h1 class="pb-2 text-center color-blue">MEET THE TEAM</h1>
-                <div class="col-lg-3 image mb-3">
-                    <img src="{{ asset('public/web-assets/img/Asset3.png ') }}" class="img-fluid" alt="">
-                    <div class="overlay1">
-                        <div class="text-1">
-                            <P class="meet-p">ZAIN ALVI</P>
-                            <p class="meet-p1">Managing Director</p>
-                            <div class="card-footer-d">
-                                <div class="socials-footer  justify-content-center">
-                                    <ul class="list-inline social-icon">
-                                        <li class="list-inline-item ">
-                                            <a href="#" class="link-one">
-                                                <i class="bi bi-facebook " aria-hidden="true"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a href="#" class="link-one">
-                                                <i class="bi bi-twitter" aria-hidden="true"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a href="#" class="link-one">
-                                                <i class="bi bi-instagram" aria-hidden="true"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a href="#" class="link-one">
-                                                <i class="bi bi-linkedin" aria-hidden="true"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
+
+    @if (count($data['teams']) > 0)
+        <section>
+            <div class="container helloooas">
+                <div class="row mt-5 mb-4">
+                    <h1 class="pb-2 text-center color-blue">MEET THE TEAM</h1>
+
+                    @foreach ($data['teams'] as $team)
+                        <div class="col-lg-3 col-md-3 col-sm-6 image mb-3">
+                            <img src="{{ asset('storage/app/public/uploads/team/' . $team->image) }}" class="img-fluid"
+                                alt="">
+                            <div class="overlay1">
+                                <div class="text-1">
+                                    <P class="meet-p">{{ $team->name }}</P>
+                                    <p class="meet-p1">{{ $team->desig }}</p>
+                                    <div class="card-footer-d">
+                                        <div class="socials-footer  justify-content-center">
+                                            <ul class="list-inline social-icon">
+                                                <li class="list-inline-item ">
+                                                    <a href="#" class="link-one">
+                                                        <i class="bi bi-facebook " aria-hidden="true"></i>
+                                                    </a>
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <a href="#" class="link-one">
+                                                        <i class="bi bi-twitter" aria-hidden="true"></i>
+                                                    </a>
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <a href="#" class="link-one">
+                                                        <i class="bi bi-instagram" aria-hidden="true"></i>
+                                                    </a>
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <a href="#" class="link-one">
+                                                        <i class="bi bi-linkedin" aria-hidden="true"></i>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
+
                             </div>
+
+
                         </div>
-
-                    </div>
-
+                    @endforeach
 
                 </div>
-                <div class="col-lg-3 image mb-3">
-                    <img src="{{ asset('public/web-assets/img/Asset3.png ') }}" class="img-fluid" alt="">
-                    <div class="overlay1">
-                        <div class="text-1">
-                            <P class="meet-p">ZAIN ALVI</P>
-                            <p class="meet-p1">Managing Director</p>
-                            <div class="card-footer-d">
-                                <div class="socials-footer  ">
-                                    <ul class="list-inline">
-                                        <li class="list-inline-item">
-                                            <a href="#" class="link-one">
-                                                <i class="bi bi-facebook" aria-hidden="true"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a href="#" class="link-one">
-                                                <i class="bi bi-twitter" aria-hidden="true"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a href="#" class="link-one">
-                                                <i class="bi bi-instagram" aria-hidden="true"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a href="#" class="link-one">
-                                                <i class="bi bi-linkedin" aria-hidden="true"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+        </section>
+    @endif
 
-                    </div>
-
-
-                </div>
-                <div class="col-lg-3 image mb-3">
-                    <img src="{{ asset('public/web-assets/img/Asset3.png ') }}" class="img-fluid" alt="">
-                    <div class="overlay1">
-                        <div class="text-1">
-                            <P class="meet-p">ZAIN ALVI</P>
-                            <p class="meet-p1">Managing Director</p>
-                            <div class="card-footer-d">
-                                <div class="socials-footer  justify-content-center">
-                                    <ul class="list-inline">
-                                        <li class="list-inline-item">
-                                            <a href="#" class="link-one">
-                                                <i class="bi bi-facebook" aria-hidden="true"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a href="#" class="link-one">
-                                                <i class="bi bi-twitter" aria-hidden="true"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a href="#" class="link-one">
-                                                <i class="bi bi-instagram" aria-hidden="true"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a href="#" class="link-one">
-                                                <i class="bi bi-linkedin" aria-hidden="true"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                </div>
-
-                <div class="col-lg-3 image mb-3">
-                    <img src="{{ asset('public/web-assets/img/Asset3.png ') }}" class="img-fluid" alt="">
-                    <div class="overlay1">
-                        <div class="text-1">
-                            <P class="meet-p">ZAIN ALVI</P>
-                            <p class="meet-p1">Managing Director</p>
-                            <div class="card-footer-d">
-                                <div class="socials-footer  justify-content-center">
-                                    <ul class="list-inline">
-                                        <li class="list-inline-item">
-                                            <a href="#" class="link-one">
-                                                <i class="bi bi-facebook" aria-hidden="true"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a href="#" class="link-one">
-                                                <i class="bi bi-twitter" aria-hidden="true"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a href="#" class="link-one">
-                                                <i class="bi bi-instagram" aria-hidden="true"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a href="#" class="link-one">
-                                                <i class="bi bi-linkedin" aria-hidden="true"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                </div>
-            </div>
-    </section>
 
     <section class="charman-section mb-5">
 
@@ -310,11 +206,7 @@
 
                     <a href="{{ url('contact') }}" class="btn btn-default btn-get px-4 py-2"><span>GET IN TOUCH</span></a
                         href="{{ url('contact') }}">
-
-
                 </div>
-
-
 
                 <div class="col-md-5" data-aos="fade-left">
                     <img src="{{ asset('public/web-assets/img/Asset 1.png') }}" alt="img" class="ch-img"

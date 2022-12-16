@@ -8,7 +8,7 @@
                     aria-label="breadcrumb">
                     <h1 class="color-a">BLOG</h1>
                     <ol class="breadcrumb justify-content-center">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        {{-- <li class="breadcrumb-item"><a href="#">Home</a></li> --}}
                         <li class="breadcrumb-item active" aria-current="page">Blog</li>
                     </ol>
                 </nav>

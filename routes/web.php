@@ -25,7 +25,7 @@ Route::controller(WebController::class)->group(function () {
     //Send Mail Contact
     Route::get('/contact', 'Contact')->name('contact');
     Route::post('/contact-mail', 'ContactMail');
-    
+    //projects
     Route::get('/projects/{id}', 'Projects');
 });
 

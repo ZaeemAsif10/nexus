@@ -4,10 +4,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>POSHCITY</title>
+    <title>NEXUS</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="{{ asset('public/assets/auth/login-page/css/main.css')}}">
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('public/assets/img/logo/logo.png') }}">
+    {{-- <link rel="shortcut icon" type="image/x-icon" href="{{ asset('public/assets/img/logo/logo.png') }}"> --}}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 </head>

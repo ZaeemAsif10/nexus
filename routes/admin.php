@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\DetailSliderController;
 use App\Http\Controllers\Admin\FeatureController;
 use App\Http\Controllers\Admin\ProjectController;
+use App\Http\Controllers\Admin\TeamController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -48,12 +49,23 @@ Route::group(['middleware' => ['auth', 'can:isAdmin']], function () {
 
      });
 
+     //Blog Controller Routes
      Route::controller(BlogController::class)->group(function () {
 
         Route::get('/blog', 'index')->name('blog');
         Route::any('/create-blog', 'createBlog');
         Route::get('/edit-blog/{id}', 'editBlog');
         Route::post('/update-blog', 'updateBlog');
+
+     });
+
+     //Team Controller Routes
+     Route::controller(TeamController::class)->group(function () {
+
+        Route::get('/team', 'index')->name('team');
+        Route::any('/create-team', 'createTeam');
+        Route::get('/edit-team/{id}', 'editTeam');
+        Route::post('/update-team', 'updateTeam');
 
      });
 

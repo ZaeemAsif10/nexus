@@ -9,6 +9,7 @@ use App\Models\HomeSlider;
 use App\Models\Project;
 use App\Models\Feature;
 use App\Models\Project_detail_slider;
+use App\Models\Team;
 use Google\Service\Docs\Request;
 use Illuminate\Support\Facades\Mail;
 
@@ -23,7 +24,8 @@ class WebController extends Controller
 
     public function About()
     {
-        return view('web-side.about');
+        $data['teams'] = Team::where('status','!=',1)->get();
+        return view('web-side.about', compact('data'));
     }
 
     public function Contact()
