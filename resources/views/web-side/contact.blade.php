@@ -24,10 +24,14 @@
                 <div class="col-sm-12 col-md-4 col-lg-4 mb-3">
                     <div class="card get-in" id="new_card">
                         <div class="card-body">
-                            <h4 class="card-title title-cont">GET IN TOUCH</h4>
-                            <span class="card-text fw-bold mb-2">+92 308 8555508</span>
-                            <h6 class="card-text mt-0"><a href="mailto:demo@gmail.com">demo@gmail.com</a></h6>
+                            <div class="con">
+                                <div>
+                                    <h4 class="card-title title-cont">GET IN TOUCH</h4>
+                                    <span class="card-text fw-bold mb-2">+92 308 8555508</span>
+                                    <h6 class="card-text mt-0"><a href="mailto:demo@gmail.com">demo@gmail.com</a></h6>
 
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -35,13 +39,14 @@
                 <div class="col-sm-12 col-md-4 col-lg-4 mb-3">
                     <div class="card get-in">
                         <div class="card-body">
-                            <h4 class="card-title title-cont">CONTACT NUMBER</h4>
-                            <p class="card-text mt-4">
-                            <h6 class="fw-bold c-txt" style="font-size:10px ;">PLAZA 3 COMMERCiAL RAYA GOLF COURSE
-                                DHA PHASE 6 LAHORE</h6>
-                            <p class="card-text mt-0">
-                            <h6 class="fw-bold c-txt" style="font-size:9px ;">3KM FAiZPUR iNTERCHANGE MOTORWAY
-                                M2 MAiN SHARAQPUR ROAD LAHORE.</h6>
+                            <div class="con">
+                                <div>
+                                    <h4 class="card-title title-cont">CONTACT NUMBER</h4>
+                                    <p class="card-text mt-4">
+                                    <h6 class="fw-bold c-txt" style="font-size:14px ;">3KM FAiZPUR iNTERCHANGE MOTORWAY
+                                        M2 MAiN SHARAQPUR ROAD LAHORE.</h6>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -49,9 +54,13 @@
                 <div class="col-sm-12 col-md-4 col-lg-4 mb-3">
                     <div class="card get-in">
                         <div class="card-body">
-                            <h4 class="card-title title-cont">WORKING HOURS</h4>
-                            <h6 class="card-text mb-2 fw-bold">10:00 AM</h6>
-                            <h6 class="card-text mt-0 fw-bold">07:00 PM</h6>
+                            <div class="con">
+                                <div>
+                                    <h4 class="card-title title-cont">WORKING HOURS</h4>
+                                    <h6 class="card-text mb-2 fw-bold">10:00 AM</h6>
+                                    <h6 class="card-text mt-0 fw-bold">07:00 PM</h6>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

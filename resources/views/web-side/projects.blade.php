@@ -81,7 +81,7 @@
             <div class="row text-center" data-aos="zoom-in">
                 <h1 class=" mb-5">WHAT MAKES <span class="color-a">US UNIQUE</span></h1>
                 <div class="col-md-4">
-                    <img src="{{ asset('public/web-assets/img/comunity/GatedCommunity1.png') }}" alt=""
+                    <img src="{{ asset('public/web-assets/img/comunity/Gated.png') }}" alt=""
                         class="uniq_img" srcset="">
                     <p class="mt-3 img-p">
                         Posh City is a Gated Community. It is a concept of modern lifestyle to ensure safety and surety
@@ -90,7 +90,7 @@
                 </div>
 
                 <div class="col-md-4">
-                    <img src="{{ asset('public/web-assets/img/comunity/Serene Outdoor-01.png') }}" alt=""
+                    <img src="{{ asset('public/web-assets/img/comunity/SERENE OUTDOORS.png') }}" alt=""
                         class="uniq_img" srcset="">
                     <p class="mt-3 img-p">
                         The luxurious living in Posh City is surrounded by lush green parks and green belts all around
@@ -99,7 +99,7 @@
                 </div>
 
                 <div class="col-md-4">
-                    <img src="{{ asset('public/web-assets/img/comunity/Uitilites Supply-01.png') }}" alt=""
+                    <img src="{{ asset('public/web-assets/img/comunity/uitilites.png') }}" alt=""
                         class="uniq_img" srcset="">
                     <p class="mt-3 img-p">
                         Posh City is ensuring the provision of utilities like 24/7 electricity, gas and water supply
@@ -108,7 +108,7 @@
                 </div>
 
                 <div class="col-md-4">
-                    <img src="{{ asset('public/web-assets/img/comunity/TREATMENT PLANT-01.png') }}" alt=""
+                    <img src="{{ asset('public/web-assets/img/comunity/SEWAGE.png') }}" alt=""
                         class="uniq_img" srcset="">
                     <p class="mt-3 img-p">
                         To prevent the contamination and water and environment, the latest technology sewage treatment
@@ -127,7 +127,7 @@
 
 
                 <div class="col-md-4">
-                    <img src="{{ asset('public/web-assets/img/comunity/COMMERCIAL-01.png') }}" alt=""
+                    <img src="{{ asset('public/web-assets/img/comunity/COMMERCIAL.png') }}" alt=""
                         class="uniq_img" srcset="">
                     <p class="mt-3 img-p">
                         Posh City is going to be next commercial hub. The sky-high buildings in the business zone will
@@ -135,8 +135,6 @@
                     </p>
                 </div>
             </div>
-
-
 
 
             <section class="p-4">

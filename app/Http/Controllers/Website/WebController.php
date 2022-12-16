@@ -58,3 +58,5 @@ class WebController extends Controller
         return view('web-side.blog', compact('data'));
     }
 }
+
+
