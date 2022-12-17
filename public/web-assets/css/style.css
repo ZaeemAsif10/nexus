@@ -36,7 +36,7 @@ h4 {
     padding: 50px 0px;
 }
 
-.gall{
+.gall {
     margin-bottom: -3rem !important;
 }
 
@@ -165,7 +165,7 @@ a:hover {
     border-radius: 15px;
 }
 
-#box-row .card-1 p{
+#box-row .card-1 p {
     color: white;
 }
 
@@ -177,7 +177,7 @@ a:hover {
     border-radius: 15px;
 }
 
-#box-row .card-2 p{
+#box-row .card-2 p {
     color: white;
 }
 
@@ -189,7 +189,7 @@ a:hover {
     border-radius: 15px;
 }
 
-#box-row .card-3 p{
+#box-row .card-3 p {
     color: white;
 }
 
@@ -202,7 +202,7 @@ a:hover {
     border-radius: 15px;
 }
 
-#box-row .card-4 p{
+#box-row .card-4 p {
     color: white;
 }
 
@@ -802,8 +802,8 @@ a:hover {
         height: 100% !important;
         font-size: 10px !important;
     }
-    
-    .btn-pro{
+
+    .btn-pro {
         font-size: 12px !important;
     }
 
@@ -888,7 +888,7 @@ a:hover {
 
     }
 
-    .footer-section ul{
+    .footer-section ul {
         font-size: 14px !important;
     }
 
@@ -896,7 +896,7 @@ a:hover {
         height: 200px !important;
     }
 
-    .nexus_logoss{
+    .nexus_logoss {
         width: 65% !important;
         height: auto !important;
     }
