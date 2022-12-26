@@ -90,3 +90,16 @@ new Swiper('#project-carousel', {
     }
   }
 });
+
+// social icon color change on scroll
+// window.onscroll = function(){
+//   var top = window.pageYOffset || document.documentElement.scrollTop;
+//   var form = document.getElementById('social-icon');
+//   if (top > 330) {
+//     form.classList.add("social-scroll");
+//   } else {
+//     form.classList.remove("social-scroll");
+//   }
+// }
+
+
